@@ -177,12 +177,12 @@ public class ClienteDAO {
 		
 		Cliente cliente = new Cliente();
     	cliente.setId(125);
-    	cliente.setNome("Marcos Alberto");
-    	cliente.setSobrenome("Nogueira");
-    	cliente.setIniciais("MAN");
+    	cliente.setNome("Valnei");
+    	cliente.setSobrenome("Barboza");
+    	cliente.setIniciais("VB");
     	cliente.setStatus(true);
     	cliente.setTipo(TipoEnum.INTERNO);
-    	cliente.setDataNascimento(LocalDate.of(1983, 6, 12));
+    	cliente.setDataNascimento(LocalDate.of(1980, 4, 03));
     	cliente.setDataAtualizacao(OffsetDateTime.now());
     	
     	return cliente;
