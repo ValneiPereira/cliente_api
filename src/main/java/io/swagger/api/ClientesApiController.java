@@ -35,17 +35,7 @@ public class ClientesApiController implements ClientesApi {
     }
 
     public ResponseEntity<Clientes> consultarTodos() {
-		/*String accept = request.getHeader("Accept");
-		if (accept != null && accept.contains("application/json")) {
-		    try {
-		        return new ResponseEntity<Clientes>(objectMapper.readValue("\"\"", Clientes.class), HttpStatus.NOT_IMPLEMENTED);
-		    } catch (IOException e) {
-		        log.error("Couldn't serialize response for content type application/json", e);
-		        return new ResponseEntity<Clientes>(HttpStatus.INTERNAL_SERVER_ERROR);
-		    }
-		}
 		
-		return new ResponseEntity<Clientes>(HttpStatus.NOT_IMPLEMENTED);*/
     	ResponseEntity<Clientes> responseEntity = null;
     	try {
     		List<Cliente> clientes = clienteDAO.todos();

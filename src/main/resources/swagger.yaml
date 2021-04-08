@@ -183,7 +183,7 @@ paths:
         200:
           description: "Sucesso ao consultar um cliente existente por sobrenome"
           schema:
-            $ref: "#/definitions/Cliente"
+            $ref: "#/definitions/Clientes"
         400:
           description: "Consulta inválido."
         401:
@@ -238,6 +238,8 @@ paths:
       responses:
         200:
           description: "Sucesso ao recuperar readme da API."
+          schema:
+            type: "string"
         500:
           description: "Erro interno ao tentar realizar recuperar o readme da API."
           

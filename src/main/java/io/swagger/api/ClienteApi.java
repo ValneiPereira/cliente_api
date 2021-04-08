@@ -5,22 +5,22 @@
  */
 package io.swagger.api;
 
-import io.swagger.model.Cliente;
-import io.swagger.annotations.*;
+import javax.validation.Valid;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.validation.Valid;
-import javax.validation.constraints.*;
-import java.util.List;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+import io.swagger.model.Cliente;
+import io.swagger.model.Clientes;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2021-04-07T05:48:22.248Z")
 
 @Validated
@@ -85,7 +85,7 @@ public interface ClienteApi {
 
     @ApiOperation(value = "Consulta cliente existente por sobrenome.", nickname = "consultarPorSobrenome", notes = "Esta operação tem por obejtivo consultar o cliente por sobrenome", response = Cliente.class, tags={ "Consulta", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Sucesso ao consultar um cliente existente por sobrenome", response = Cliente.class),
+        @ApiResponse(code = 200, message = "Sucesso ao consultar um cliente existente por sobrenome", response = Clientes.class),
         @ApiResponse(code = 400, message = "Consulta inválido."),
         @ApiResponse(code = 401, message = "Exclusão não autorizada."),
         @ApiResponse(code = 404, message = "Nenhum cliente encontrado para consulta."),
@@ -94,7 +94,7 @@ public interface ClienteApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.GET)
-    ResponseEntity<Cliente> consultarPorSobrenome(@ApiParam(value = "sobrenome do cliente.",required=true) @PathVariable("sobrenome") String sobrenome);
+    ResponseEntity<Clientes> consultarPorSobrenome(@ApiParam(value = "sobrenome do cliente.",required=true) @PathVariable("sobrenome") String sobrenome);
 
 
     @ApiOperation(value = "Exclui um cliente existente", nickname = "excluir", notes = "Esta operação tem por objetivo exlcuir um cliente existente.", tags={ "Exclusao", })
